@@ -10,14 +10,14 @@ app.use(express.static("../client"));
 app.set("view engine", "ejs");
 
 //4. Establecer la carpeta de vistas (Necesario para el motor de plantillas).
-app.set('views', '../client');
+app.set("views", "../client");
 
 //5. Renderizar las plantillas EJS.
-app.get("/", (request, response) => {
+app.get("/", function(request, response) {
     response.render("index.ejs"); //El método render, permite renderizar una plantilla.
 });
 
-app.get("/pagina", (request, response) => {
+app.get("/pagina", function(request, response) {
     response.render("pagina.ejs", { //El primer parámetro indica la plantilla y el segundo parámetro corresponde a un objeto JSON con variables que pueden ser utilizadas en la plantilla.
         valor1: "Valor 1",
         valor2: "Valor 2",
